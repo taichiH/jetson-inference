@@ -146,8 +146,8 @@ bool imageNet::init(const char* prototxt_path, const char* model_path, const cha
 	/*
 	 * load synset classnames
 	 */
-	mOutputClasses = DIMS_C(mOutputs[0].dims);
-	
+	// mOutputClasses = DIMS_C(mOutputs[0].dims);
+        mOutputClasses = DIMS_H(mOutputs[0].dims);
 	if( !loadClassInfo(class_path, mOutputClasses) || mClassSynset.size() != mOutputClasses || mClassDesc.size() != mOutputClasses )
 	{
 		printf("imageNet -- failed to load synset class descriptions  (%zu / %zu of %u)\n", mClassSynset.size(), mClassDesc.size(), mOutputClasses);

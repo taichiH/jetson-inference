@@ -66,7 +66,7 @@ if(CUDA_VERSION_MAJOR GREATER 9)
 	set(
 		CUDA_NVCC_FLAGS
 		${CUDA_NVCC_FLAGS}; 
-		-gencode arch=compute_72,code=sm_72
+		-gencode arch=compute_75,code=sm_75
 	)
 
 	# OpenCV used for findHomography() and decomposeHomography()
@@ -105,7 +105,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}/lib)
 
 # build C/C++ library
 include_directories(${PROJECT_INCLUDE_DIR} ${PROJECT_INCLUDE_DIR}/jetson-inference ${PROJECT_INCLUDE_DIR}/jetson-utils)
-include_directories(/usr/include/gstreamer-1.0 /usr/lib/aarch64-linux-gnu/gstreamer-1.0/include /usr/include/glib-2.0 /usr/include/libxml2 /usr/lib/aarch64-linux-gnu/glib-2.0/include/)
+include_directories(/usr/include/gstreamer-1.0 /usr/lib/x86_64-linux-gnu/gstreamer-1.0/include /usr/include/glib-2.0 /usr/include/libxml2 /usr/lib/x86_64-linux-gnu/glib-2.0/include/)
 
 file(GLOB inferenceSources c/*.cpp c/*.cu calibration/*.cpp plugins/*.cpp)
 file(GLOB inferenceIncludes c/*.h c/*.cuh calibration/*.h)
